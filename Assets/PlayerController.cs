@@ -31,7 +31,6 @@ public class PlayerController : MonoBehaviour
          _lookDirection.x = 0;
          _lookDirection.y = -1;
       }
-
       UpdateSpawnPosition();
    }
 
@@ -54,7 +53,7 @@ public class PlayerController : MonoBehaviour
       var projectileClone = Instantiate(projectile, UpdateSpawnPosition(), Quaternion.identity);
       
       projectileClone.TryGetComponent(out Rigidbody2D rb2D);
-      rb2D.linearVelocity = _lookDirection * projectileSpeed + _rigidbody2D.linearVelocity;
+      rb2D.linearVelocity = _lookDirection * projectileSpeed;
       
       // Get the angle between Y and X // Turns the Radians to Degrees
       var angle = Mathf.Atan2(_lookDirection.y, _lookDirection.x) * Mathf.Rad2Deg;
@@ -71,6 +70,7 @@ public class PlayerController : MonoBehaviour
 
    private Vector2 UpdateSpawnPosition()
    {
+      // This shit also works for 360 aiming, just switch moveDirection with LookDirection
       _spawnPosition.x = transform.localPosition.x + (_input.moveDirection.x/2);
       _spawnPosition.y = transform.localPosition.y + (_input.moveDirection.y/2);
 
