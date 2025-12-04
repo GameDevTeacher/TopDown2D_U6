@@ -10,6 +10,7 @@ public class TarodevAnimation : MonoBehaviour
     private bool _damaging;
 
     private Vector2 direction;
+    private bool followPlayer;
     private Animator _animator;
     
     private void Awake() => _animator = GetComponent<Animator>();
@@ -31,7 +32,8 @@ public class TarodevAnimation : MonoBehaviour
 
         if (_damaging) return LockState(Damage, damageAnimTime);
         if (_casting) return LockState(Cast, castAnimTime);
-        return direction != Vector2.zero ? Walk : Idle;
+                //return direction != Vector2.zero ? Walk : Idle;
+        return followPlayer ? Walk : Idle;
 
         int LockState(int s, float t)
         {
