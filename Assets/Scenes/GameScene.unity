@@ -143,25 +143,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Objects.ItemPickup
   item: {fileID: 5124220520145411036, guid: 6547d48478c5c434ea025369c5cda366, type: 3}
   pickupManager: {fileID: 1512751751}
---- !u!1 &658510026 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5124220520145411036, guid: 6547d48478c5c434ea025369c5cda366, type: 3}
-  m_PrefabInstance: {fileID: 2077312899}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &658510032
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 658510026}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: caeca6b832014d7b8dedd228d4068a09, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Objects.ItemPickup
-  item: {fileID: 5124220520145411036, guid: 6547d48478c5c434ea025369c5cda366, type: 3}
-  pickupManager: {fileID: 1512751751}
 --- !u!1001 &755454582
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -177,6 +158,10 @@ PrefabInstance:
     - target: {fileID: 1935417639748424556, guid: d620e6883a8614d30bb12053664add84, type: 3}
       propertyPath: m_Layer
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 1935417639748424556, guid: d620e6883a8614d30bb12053664add84, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7763218384303543442, guid: d620e6883a8614d30bb12053664add84, type: 3}
       propertyPath: m_LocalPosition.x
@@ -424,6 +409,10 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 7
       objectReference: {fileID: 0}
+    - target: {fileID: 5124220520145411036, guid: 6547d48478c5c434ea025369c5cda366, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -576,6 +565,53 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1.15, y: 1.15}
   m_EdgeRadius: 0
+--- !u!1 &1838388431
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1838388433}
+  - component: {fileID: 1838388432}
+  m_Layer: 0
+  m_Name: WeightedSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1838388432
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1838388431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3bbbe9b973bd14d11a9d1b115b11e5aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LootSpawner
+  myLootTable: {fileID: 11400000, guid: 4f2114d5ae2a54de2a9eff3e725efb62, type: 2}
+  spawnPoint: {fileID: 1838388433}
+  dropForce: 3
+--- !u!4 &1838388433
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1838388431}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.22, y: 0.15, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2077312899
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -628,17 +664,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gem_O (1)
       objectReference: {fileID: 0}
-    - target: {fileID: 5124220520145411036, guid: 6547d48478c5c434ea025369c5cda366, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
+    - target: {fileID: 8428339698538220805, guid: 6547d48478c5c434ea025369c5cda366, type: 3}
+      propertyPath: pickupManager
+      value: 
+      objectReference: {fileID: 1512751751}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5124220520145411036, guid: 6547d48478c5c434ea025369c5cda366, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 658510032}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 6547d48478c5c434ea025369c5cda366, type: 3}
 --- !u!1001 &593600919041098153
 PrefabInstance:
@@ -695,6 +728,10 @@ PrefabInstance:
     - target: {fileID: 5124220520145411036, guid: 6547d48478c5c434ea025369c5cda366, type: 3}
       propertyPath: m_Layer
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5124220520145411036, guid: 6547d48478c5c434ea025369c5cda366, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1130,10 +1167,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Coin_O
       objectReference: {fileID: 0}
-    - target: {fileID: 1935417639748424556, guid: d620e6883a8614d30bb12053664add84, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
     - target: {fileID: 7763218384303543442, guid: d620e6883a8614d30bb12053664add84, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.503
@@ -1175,10 +1208,6 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8808237622919545319, guid: d620e6883a8614d30bb12053664add84, type: 3}
-      propertyPath: item
-      value: 
-      objectReference: {fileID: 1935417639748424556, guid: d620e6883a8614d30bb12053664add84, type: 3}
-    - target: {fileID: 8808237622919545319, guid: d620e6883a8614d30bb12053664add84, type: 3}
       propertyPath: pickupManager
       value: 
       objectReference: {fileID: 1512751751}
@@ -1202,3 +1231,4 @@ SceneRoots:
   - {fileID: 7951420844486380788}
   - {fileID: 755454582}
   - {fileID: 4338414890536731513}
+  - {fileID: 1838388433}
