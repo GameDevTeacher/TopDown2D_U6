@@ -43,7 +43,7 @@ public class PlayerController : MonoBehaviour
   
    private void FixedUpdate()
    {
-      _rigidbody2D.linearVelocity = _input.moveDirection * moveSpeed;
+      _rigidbody2D.linearVelocity = _input.MoveDirection * moveSpeed;
    }
    
    private void UpdateProjectileSpawn()
@@ -71,8 +71,8 @@ public class PlayerController : MonoBehaviour
    private Vector2 UpdateSpawnPosition()
    {
       // This shit also works for 360 aiming, just switch moveDirection with LookDirection
-      _spawnPosition.x = transform.localPosition.x + (_input.moveDirection.x/2);
-      _spawnPosition.y = transform.localPosition.y + (_input.moveDirection.y/2);
+      _spawnPosition.x = transform.localPosition.x + (_input.MoveDirection.x/2);
+      _spawnPosition.y = transform.localPosition.y + (_input.MoveDirection.y/2);
 
       if (_spawnPosition == Vector2.zero)
       {
@@ -83,9 +83,9 @@ public class PlayerController : MonoBehaviour
 
    private void UpdateLookDirection()
    {
-      if (_input.moveDirection != Vector2.zero)
+      if (_input.MoveDirection != Vector2.zero)
       {
-         _lookDirection = _input.moveDirection;
+         _lookDirection = _input.MoveDirection;
       }
       
       if (_lookDirection.x != 0)

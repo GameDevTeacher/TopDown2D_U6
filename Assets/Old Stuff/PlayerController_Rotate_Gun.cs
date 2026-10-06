@@ -46,7 +46,7 @@ public class PlayerController_Rotate_Gun : MonoBehaviour
   
    private void FixedUpdate()
    {
-      _rigidbody2D.linearVelocity = _input.moveDirection * moveSpeed;
+      _rigidbody2D.linearVelocity = _input.MoveDirection * moveSpeed;
    }
    
    private void UpdateProjectileSpawn()
@@ -71,7 +71,7 @@ public class PlayerController_Rotate_Gun : MonoBehaviour
       var angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
       gunTransform.rotation = Quaternion.Euler(0,0,angle);
       
-      if (_input.moveDirection.x != 0)
+      if (_input.MoveDirection.x != 0)
       {
          //transform.localScale = new Vector3(Mathf.Sign(_input.moveDirection.x), 1, 1);
          //_spriteRenderer.flipX = _input.moveDirection.x < 0;

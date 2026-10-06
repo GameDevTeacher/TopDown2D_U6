@@ -20,13 +20,13 @@ namespace Player
 
         private void Update()
         {
-            _animation.UpdateAnimation_New(_input.moveDirection, _input.attackPressed);
-            _attack.UpdateAttack(_input.attackPressed, _input.lookDirection);
+            _animation.UpdateAnimation_New(_input.MoveDirection, _input.AttackPressed);
+            _attack.UpdateAttack(_input.AttackPressed, _input.LookDirection);
         }
 
         private void FixedUpdate()
         {
-            _movement.UpdateMovement(_input.moveDirection);
+            _movement.UpdateMovement(_input.MoveDirection);
         }
     }
 }
