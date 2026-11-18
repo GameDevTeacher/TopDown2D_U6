@@ -1,3 +1,4 @@
+using System;
 using Interfaces;
 using Player;
 using UnityEngine;
@@ -6,22 +7,17 @@ namespace Objects
 {
     public class ItemPickup : MonoBehaviour, IPickupable
     {
-        public GameObject item;
-
-        public PlayerPickupManager pickupManager;
-
-        //public GameObject GameObject { get; }
-
+        public DictionaryAsset assetDic;
+        
+        public PickupType type;
+        
         public void Pickup()
         {
-            if (!pickupManager.pickupDictionary.ContainsKey(item))
+            if (!PlayerPickupManager.pickupDictionary.TryAdd(assetDic.prefabDictionary[type], 1))
             {
-                pickupManager.pickupDictionary.Add(item, 1);
+                PlayerPickupManager.pickupDictionary[assetDic.prefabDictionary[type]] += 1;
             }
-            else
-            {
-                pickupManager.pickupDictionary[item] += 1;
-            }
+
             Destroy(gameObject);
         }
     }

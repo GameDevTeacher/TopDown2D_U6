@@ -1,4 +1,6 @@
+using System;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace Objects
 {
@@ -17,8 +19,9 @@ namespace Objects
             Open();
         }
 
-        public void Damage(float damageTaken)
+        public void Damage(float damageTaken, DamageTypes type)
         {
+            
             health -= damageTaken;
             if (health <= 0)
             {
@@ -34,5 +37,6 @@ namespace Objects
                 Instantiate(spawnables[Random.Range(0, spawnables.Length)], transform.position, Quaternion.identity);
             }
         }
+        
     }
 }

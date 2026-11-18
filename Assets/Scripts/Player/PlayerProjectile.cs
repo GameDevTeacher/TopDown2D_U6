@@ -8,7 +8,7 @@ public class PlayerProjectile : MonoBehaviour
     {
         if (other.TryGetComponent(out IDamageable<float> damageable))
         {
-            damageable.Damage(projectileDamage);
+            damageable.Damage(projectileDamage, DamageTypes.Normal);
             Destroy(gameObject);
         }
     }

@@ -6,9 +6,12 @@ namespace Player
 {
     public class PlayerPickupManager : MonoBehaviour
     {
-        public SerializedDictionary<GameObject, int> pickupDictionary = new SerializedDictionary<GameObject, int>();
+        //public SerializedDictionary<GameObject, int> pickupDictionary;
+
+       public static SerializedDictionary<GameObject, int> pickupDictionary = new SerializedDictionary<GameObject, int>();
         
         [SerializeField] public SerializedDictionary<GameObject, int> visibleDic;
+        
 
         private void Update()
         {

@@ -17,19 +17,19 @@ namespace Player
         }
         
         public void UpdateMovement(Vector2 moveDirection)
-        {
-            if (!CanMove)
-            {
-                _rigidbody2D.linearVelocity = Vector2.zero;
-                return;
-            }
-            
-            _rigidbody2D.linearVelocity = moveDirection * _moveSpeed;
-            
-            if (moveDirection.x != 0)
-            {
-                _transform.localScale = new Vector2(Mathf.Sign(moveDirection.x), _transform.localScale.y);
-            }
-        }
+                 {
+                     if (!CanMove)
+                     {
+                         _rigidbody2D.linearVelocity = Vector2.zero;
+                         return;
+                     }
+                     
+                     _rigidbody2D.linearVelocity = moveDirection * _moveSpeed;
+                     
+                     if (moveDirection.x != 0)
+                     {
+                         _transform.localScale = new Vector2(Mathf.Sign(moveDirection.x), _transform.localScale.y);
+                     }
+                 }
     }
 }

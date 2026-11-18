@@ -193,5 +193,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caeca6b832014d7b8dedd228d4068a09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Objects.ItemPickup
-  item: {fileID: 5124220520145411036}
+  assetDic: {fileID: 11400000, guid: a62098333759344fcb7d87726ad4e4e3, type: 2}
+  type: 0
   pickupManager: {fileID: 0}

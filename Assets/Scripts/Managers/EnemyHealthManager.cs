@@ -4,7 +4,7 @@ namespace UnityEngine
     {
         public float enemyHealth;
         
-        public void Damage(float damageTaken)
+        public void Damage(float damageTaken, DamageTypes types)
         {
             enemyHealth -= damageTaken;
             if (enemyHealth<= 0)
@@ -12,5 +12,6 @@ namespace UnityEngine
                 Destroy(gameObject);
             }
         }
+        
     }
 }

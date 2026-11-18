@@ -41,7 +41,6 @@ public class LootTable : ScriptableObject
 
         return finalDrops;
     }
-
     
     /// Calculates the total weight and returns a single random item based on their individual weights.
     
